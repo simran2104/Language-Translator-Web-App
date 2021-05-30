@@ -261,3 +261,17 @@
   });
 
 })()
+
+
+
+
+/**
+   * Initiate  glightbox 
+   */
+  const glightbox = GLightbox({
+    selector: '.glightbox'
+  });
+
+  const portfolioLightbox = GLightbox({
+    selector: '.portfolio-lightbox'
+  });
