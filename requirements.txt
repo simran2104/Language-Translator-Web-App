@@ -1,2 +1,3 @@
+Django==3.1.12
+django-heroku==0.3.1
 translate
-django
