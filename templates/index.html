@@ -1,0 +1,59 @@
+ {% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %} 
+ <main id="main">
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container-fluid" data-aos="fade-up">
+      <div class="row justify-content-center">
+        <div class="col-xl-5 col-lg-6 pt-3 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+          <!-- <h1>Language Translator</h1> -->
+          {% if Text != None %}
+          <h2>{{ Text }}</h2>
+          {% endif %}
+
+          
+            <form method="post" action="{% url 'home' %}">
+                {% csrf_token %}
+                <input type="text" name="translate" style="width: 100%; padding: 12px 20px; margin: 8px 0; box-sizing: border-box;" placeholder="Type your text here..." required>
+                <br>
+                <select required name="language" style="  width: 100%; padding: 16px 20px; border: none; border-radius: 4px;
+   background-color: #f1f1f1;" >
+                    <option value="Hindi" selected>Hindi</option>
+                    <option value="Marathi">Marathi</option>
+                    <option value="German">German</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Arabic">Arabic</option>
+                    <option value="Bengali">Bengali</option>
+                    <option value="French">French</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Portuguese">Portuguese</option>
+                    <option value="Russian">Russian</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Tamil">Tamil</option>
+                    <option value="Telugu">Telugu</option>
+
+                </select>
+                <br>
+                <button type="submit" class="btn-get-started" >Translate</button>
+            </form>
+         
+        </div>
+        <div class="col-xl-4 col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="150">
+          <img src="{% static 'img/hero-img.png' %}" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+          
+
+  </section><!-- End Hero -->
+
+  </main><!-- End #main -->
+{% endblock %}
